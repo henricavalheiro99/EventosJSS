@@ -6,12 +6,47 @@
     <title>Manipulando a DOM</title>
 </head>
 <body>
-    <h1>Titulo Aqui</h1>
+    <h1 class="titulo">Titulo Aqui</h1>
     <p id="sub">Um texto aqui</p>
+    <a href="" >Clique aqui</a>
     <ul id="lista">
         <li class="item">Item 1</li>
-        <li class="item">Item 2<li>
+        <li class="item">Item 2</li>
         <li class="item">Item 3</li>
     </ul>
 </body>
+<style>
+    .azul {
+        color: blue;
+        font-size: 30px;
+    }
+</style>
+<script>
+    var paragrafo = document.getElementById("sub")
+    paragrafo.textContent = "Um novo texto alterado"
+
+    var item = document.querySelectorAll(".item")
+    for(elemento of item) {
+        elemento.textContent = "Alterado"
+    }
+
+    paragrafo.style.color = "red"
+    paragrafo.style.fontSize = "40px"
+
+    var h1 = document.querySelector("h1")
+    h1.classList.add("azul")
+    // h1.classList.remove("azul")
+
+    var a = document.querySelector("a")
+    a.setAttribute("href","http://google.com")
+
+    var novoLi = document.createElement("li")
+    novoLi.textContent = "Novo Elemento LI"
+
+    var ul = document.querySelector("#lista")
+    ul.appendChild(novoLi)
+
+    ul.removeChild(item[1])
+
+</script>
 </html>
