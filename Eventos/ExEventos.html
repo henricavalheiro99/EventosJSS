@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <header class="cabecalho">
+        <p id="Henri">Henri é legal</p>
+        <br><br>
+
+        <p class="depressao">Henri não foi contratado :(</p>
+        <p class="depressao">Henri está triste</p>
+        <p class="depressao">Henri está solitário</p>
+
+
+        <br><br>
+        <ul class="TI">
+            <li class="naLista">JavaScript</li>
+            <li class="naLista">Python</li>
+            <li class="naLista">HTML</li>
+            <li class="naLista">CSS</li>
+            <li class="naLista">Figma</li>
+        </ul>
+
+        <p class="remover">Felicidade</p>
+    </header>
+
+    <script>
+        // 1
+        var p = document.getElementById("Henri")
+
+        // 2
+        var li = document.getElementsByClassName("naLista")
+
+        // 3
+        var elementosLista = document.getElementsByTagName("li")
+
+        // 4
+        var pquerySelector = document.querySelector(".depressao")
+
+        // 5
+        var pquerySelectorALL = document.querySelectorAll(".depressao")
+
+        // 6
+        p.textContent = "Henri está fazendo a atividade sem colar"
+
+        // 7
+        var ul = document.querySelector("ul")
+        ul.setAttribute("class", "ListaDesordenada")
+
+        // 8
+        p.style.color = "blue"
+        p.style.fontSize = "24px"
+
+        // 9
+        var pCriado = document.createElement("p")
+        pCriado.textContent = "Tem muita tarefa '-'"
+        pCriado.style.color = "red"
+        pCriado.style.fontSize = "22px"
+        var cabecalho = document.querySelector("header")
+        cabecalho.appendChild(pCriado)
+
+        // 10
+        var pRemover = document.getElementsByClassName("remover")
+        cabecalho.removeChild(pRemover[0])
+
+    </script>
+</body>
+</html>
